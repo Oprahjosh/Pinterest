@@ -1,0 +1,244 @@
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+body{
+ margin: 0;
+ padding: 0;
+}
+.container-fluid{
+ width: 100% ;
+
+}
+.main-container{
+ width: 100%;
+ height: 100vh;
+ background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url('./images/signupbackground.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ overflow-x: hidden;
+}
+.grid-row-3{
+ display: grid;
+ grid-template-columns: 10fr 1fr 10fr;
+ width: 100%;
+ height: auto;
+  padding: 1rem 3rem;
+}
+.sign-1{
+ padding: 1rem;
+ margin-top: 3rem;
+}
+.text-white{
+ color: white;
+
+}
+.font-big{
+ font-size: 64px;
+}
+.sign-container{
+ display: grid;
+ place-items: center;
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ background-color:  #407A57;
+color: white;
+}
+.arrow{
+ margin-top: 3rem;
+ padding-top: 1rem;
+}
+a{
+ text-decoration: none !important;
+ color: white;
+}
+a:hover{
+ color:white;
+}
+.create{
+ width: 92%;
+ border-bottom-left-radius: 15px;
+ border-bottom-right-radius: 15px;
+}
+.sign-page{
+ width: 100%;
+ height: auto;
+ display: grid;
+ place-items: center;
+
+
+}
+.sign-form-container{
+ margin-top: 3rem;
+ width: 400px;
+ height: 90vh;
+ background-color: #ffffff;
+ border-radius: 3rem;
+ display: grid;
+ place-items: center;
+ 
+
+}
+.form-parker{
+ display: grid;
+ place-items: center;
+ width: 100%;
+ height: auto;
+}
+.text-faded{
+ opacity: 0.8;
+ font-weight: 500;
+}
+.btn-radius{
+ border-radius: 15px;
+}
+.bg-red{
+ background: #E60023;
+
+}
+.text-red{
+ color: #E60023;
+}
+.mr-2{
+ margin-right: 1rem;
+}
+.nav-link:hover{
+ 
+}
+.nav-split{
+ margin-left: 50%;
+}
+.forming-container{
+ width: 70%;
+ height: auto;
+}
+.social-sign{
+ width: 70%;
+ border-radius: 15px;
+background: #1877F2;
+height: 40px;
+align-items: center;
+cursor: pointer;
+
+}
+.google-sign{
+ width: 70%;
+ border-radius: 15px;
+background: inherit;
+height: 40px;
+align-items: center;
+border: 1px solid black;
+cursor: pointer;
+
+}
+.ml-2{
+ margin-left: 1rem;
+}
+.g-img{
+ width: 30px;
+ height: 30px;
+ margin-left: 1rem;
+ margin-right: 1rem;
+}
+.agreement{
+ width: 70%;
+ height: auto;
+}
+
+.text-reduce{
+ font-size: 0.75rem;
+}
+.bold{
+ font-weight: 500;
+}
+.listing{
+ margin-right: 1rem;
+ padding: 1rem 0;
+ list-style: none;
+}
+.downlink{
+ display: block;
+
+}
+
+
+
+@media screen and  (max-width:770px) {
+ .main-container{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: white;
+
+ }
+ .grid-row-3{
+  padding: 1rem 3rem;
+  grid-template-columns: 1fr;
+
+ }
+ .nav-split{
+ margin-left: 1rem;
+}
+ .sign-form-container{
+margin-top: 1rem;
+width: 100%;
+height: 90vh;
+padding: 1rem;
+display: flex;
+flex-direction: column;
+ }
+ .forming-container{
+  width: 90%;
+ }
+ .social-sign{
+  width: 90%;
+ }
+ .google-sign{
+  width: 90%;
+ }
+ .font-big{
+  font-size: 56px;
+ }
+ .sign-1{
+  display: none;
+ }
+ .arrow{
+  display: none;
+ }
+ .agreement{
+  width: 90%;
+ }
+ 
+}
+@media screen and  (max-width:600px) {
+.grid-row-3{
+ padding: 1rem;
+}
+.downlink{
+ display: none !important;
+}
+.sign-form-container{
+ margin-top: 0;
+ padding: 0;
+ width: 100%;
+}
+ .social-sign{
+  width: 100%;
+ }
+ .google-sign{
+  width: 100%;
+ }
+ .font-big{
+  font-size: 50px;
+ }
+ .agreement{
+  width: 100%;
+ }
+ .forming-container{
+  width: 100%;
+ }
+}
