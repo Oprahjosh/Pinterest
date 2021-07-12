@@ -1,0 +1,55 @@
+{% extends 'register/blank.html' %}
+
+
+    {% block title %}
+    Document
+    {% endblock %}
+
+
+
+         {% load crispy_forms_tags %}
+            {% block Content %}
+         <form method="post">
+              {% csrf_token %}
+                {{ RegisterForm|Crispy }}
+
+
+        <div class="mb-3">
+
+        <input type="email" class="form-control btn-radius" id="exampleFormControlInput1" placeholder="Email">
+        </div>
+        <div class="mb-3">
+        <input type="password" class="form-control btn-radius" id="exampleFormControlInput2" placeholder="create a password">
+
+        </div>
+
+<div class="mb-3">
+  <input type="text" class="form-control btn-radius" id="exampleFormControlInput3" placeholder="Age">
+
+</div>
+
+<a href="dashboard.html" class="btn d-block bg-red btn-radius text-white">Continue</a>
+             </form>
+
+     </div>
+     <h4>OR</h4>
+     <div class="social-sign d-flex mb-3">
+      <i class="fab fa-facebook text-white mr-2 ml-2"></i>
+      <a href="www.facebook.com" class="text-white"> Continue with facebook</a>
+     </div>
+     <div class="google-sign d-flex">
+      <img src="https://res.cloudinary.com/www-daniekeys-com/image/upload/v1625758543/google-img-removebg-preview_qm4mgu.png" alt="" class="g-img">
+      <a href="www.google.com" class="text-dark"> Continue with google</a>
+     </div>
+     <div class="agreement">
+      <p class="text-faded text-center text-reduce">
+       By continuing, you agree to Pinterest's Terms of Service and acknowledge that you've read our Privacy Policy
+      </p>
+<div class="d-flex bold justify-content-center">
+
+ <p class="text-dark ">Already have an account? </p>
+ <a href="login.html" class="text-dark">Log in</a>
+</div>
+     </div>
+
+ {% endblock %}
