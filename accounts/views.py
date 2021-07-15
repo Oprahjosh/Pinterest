@@ -15,12 +15,13 @@ def register(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-        return redirect('/login')
+        return redirect('/dashboard')
     else:
         form = RegisterForm
-    return render ( response , 'register/register.html' , {'form': form} )
+    return render ( response , 'accounts/signup.html' , {'form': form} )
 
-
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html', )
 
 def logout_request(request):
     logout(request)

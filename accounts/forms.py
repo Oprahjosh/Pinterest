@@ -14,17 +14,20 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ['email','password1','Age','password2']
 
+    def __init__(self , *args , **kwargs):
+        super ( RegisterForm , self ).__init__ ( *args , **kwargs )
+        self.fields.pop ( 'password2' )
+
     def save(self , commit=True):
         user = super ( RegisterForm , self ).save ( commit=False )
         user.email = self.cleaned_data["email"]
         user.Age = self.cleaned_data['Age']
+        user.password1 = self.cleaned_data['password1']
         if commit:
             user.save ()
         return user
 
-    def __init__(self , *args , **kwargs):
-        super ( RegisterForm , self ).__init__ ( *args , **kwargs )
-        self.fields.pop ( 'password2' )
+
 
 '''class LoginForm(AuthenticationForm):
 

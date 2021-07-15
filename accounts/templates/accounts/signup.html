@@ -1,24 +1,26 @@
-{% extends 'register/blank.html' %}
+{% extends 'accounts/blank.html' %}
 
 
     {% block title %}
-    Document
+    Pinterest
     {% endblock %}
 
 
 
          {% load crispy_forms_tags %}
             {% block Content %}
+ <div class="forming-container">
          <form method="post">
+
               {% csrf_token %}
-                {{ RegisterForm|Crispy }}
+
 
 
         <div class="mb-3">
-
-        <input type="email" class="form-control btn-radius" id="exampleFormControlInput1" placeholder="Email">
+        <input type="email" class="form-control btn-radius" id="exampleFormControlInput1" placeholder="email">
         </div>
-        <div class="mb-3">
+
+             <div class="mb-3">
         <input type="password" class="form-control btn-radius" id="exampleFormControlInput2" placeholder="create a password">
 
         </div>
@@ -28,14 +30,14 @@
 
 </div>
 
-<a href="dashboard.html" class="btn d-block bg-red btn-radius text-white">Continue</a>
+<input class="btn d-block bg-red btn-radius text-white" type="submit" value="Continue" >
              </form>
-   {% endblock %}
+
      </div>
      <h4>OR</h4>
      <div class="social-sign d-flex mb-3">
       <i class="fab fa-facebook text-white mr-2 ml-2"></i>
-      <a href="www.facebook.com" class="text-white"> Continue  facebook</a>
+      <a href="www.facebook.com" class="text-white"> Continue with facebook</a>
      </div>
      <div class="google-sign d-flex">
       <img src="https://res.cloudinary.com/www-daniekeys-com/image/upload/v1625758543/google-img-removebg-preview_qm4mgu.png" alt="" class="g-img">
@@ -51,5 +53,6 @@
  <a href="login.html" class="text-dark">Log in</a>
 </div>
      </div>
+</div>
 
  {% endblock %}

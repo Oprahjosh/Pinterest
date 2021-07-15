@@ -26,9 +26,11 @@ urlpatterns = [
 
     path ( '' , a.index , name='index'),
 
-    path ( 'register/' , c.register , name='create' ) ,
+    path ( 'signup/' , c.register , name='create' ) ,
 
     path ( 'logout/' , m.logout_request , name='logout' ) ,
 
-    path ( 'login/' , m.login_request , name='login')
+    path ( 'login/' , m.login_request , name='login'),
+
+    path ( 'dashboard/' , m.dashboard, name='dashboard' )
     ]
