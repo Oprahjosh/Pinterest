@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%6yjgpc^4q)wo$(5hhzos8ztn4l8)2j%olam)av#tg^_=g2fv9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [pinterest-re.herokuapp.com]
 
 
 # Application definition
