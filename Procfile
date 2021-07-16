@@ -1,1 +1,1 @@
-web: gunicorn Blog.wsgi --log-file -
+web: gunicorn Pinterest.wsgi --log-file -
