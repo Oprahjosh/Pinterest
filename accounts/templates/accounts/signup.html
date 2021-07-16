@@ -17,16 +17,16 @@
 
 
         <div class="mb-3">
-        <input type="email" class="form-control btn-radius" id="exampleFormControlInput1" placeholder="email">
+        <input type="email" class="form-control btn-radius" id="exampleFormControlInput1" placeholder="email" {{form.email}}
         </div>
 
              <div class="mb-3">
-        <input type="password" class="form-control btn-radius" id="exampleFormControlInput2" placeholder="create a password">
+        <input type="password" class="form-control btn-radius" id="exampleFormControlInput2" placeholder="create a password"{{form.password1}}
 
         </div>
 
 <div class="mb-3">
-  <input type="text" class="form-control btn-radius" id="exampleFormControlInput3" placeholder="Age">
+  <input type="text" class="form-control btn-radius" id="exampleFormControlInput3" placeholder="Age" {{form.Age}}
 
 </div>
 
@@ -49,8 +49,8 @@
       </p>
 <div class="d-flex bold justify-content-center">
 
- <p class="text-dark ">Already have an account? </p>
- <a href="login.html" class="text-dark">Log in</a>
+ <p class="text-dark ">
+ <a href="/login" class="text-dark">Already have an account? Log in</a></p>
 </div>
      </div>
 </div>

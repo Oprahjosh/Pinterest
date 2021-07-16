@@ -21,6 +21,8 @@ from accounts import views as m
 from accounts import views as a
 from django.contrib.auth import views as auth_views
 
+app_name = 'accounts'
+
 urlpatterns = [
     path ( 'admin/' , admin.site.urls ) ,
 
@@ -32,5 +34,9 @@ urlpatterns = [
 
     path ( 'login/' , m.login_request , name='login'),
 
-    path ( 'dashboard/' , m.dashboard, name='dashboard' )
+    path ( 'dashboard/' , m.dashboard, name='dashboard' ),
+
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    path('admin/clearcache/', include('clearcache.urls')),
     ]

@@ -1,9 +1,8 @@
-from msilib.schema import ListView
-from pyexpat.errors import messages
-from django.contrib.auth import logout , authenticate , login
+from django.contrib.auth import logout , login
 from django.shortcuts import render,redirect
-from .forms import RegisterForm,AuthenticationForm
-from django.http import HttpResponse
+from .forms import RegisterForm,LoginForm
+from django.http import request
+
 
 # Create your views here.
 
@@ -14,7 +13,8 @@ def register(response):
     if response.method == 'POST':
         form = RegisterForm(response.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            login(request, user)
         return redirect('/dashboard')
     else:
         form = RegisterForm
@@ -26,30 +26,17 @@ def dashboard(request):
 def logout_request(request):
     logout(request)
 
-    return redirect("accounts/base.html")
-
-'''def login_request(request):
-    form = AuthenticationForm()
-    return render(request = request,
-                  template_name = "registration/login.html",
-                  context={"form":form})'''
+    return redirect("accounts/index.html")
 
 def login_request(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
+        form = LoginForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('/')
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
+            user = form.get_user()
+            login(request,user)
+        return redirect('/dashboard')
+    else:
+        form = LoginForm()
     return render(request = request,
-                    template_name = "registration/login.html",
+                    template_name = "accounts/login.html",
                     context={"form":form})
