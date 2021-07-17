@@ -19,5 +19,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     objects = CustomUserManager()
 
+    ordering = 'email'
+
     def __str__(self):
         return self.email

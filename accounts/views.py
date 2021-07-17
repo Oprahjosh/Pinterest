@@ -1,7 +1,7 @@
 from django.contrib.auth import logout , login
 from django.shortcuts import render,redirect
 from .forms import RegisterForm,LoginForm
-from django.http import request
+from django.http import request,HttpRequest
 
 
 # Create your views here.
