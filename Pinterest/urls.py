@@ -38,5 +38,4 @@ urlpatterns = [
 
     path('accounts/', include('django.contrib.auth.urls')),
 
-    path('admin/clearcache/', include('clearcache.urls')),
     ]
